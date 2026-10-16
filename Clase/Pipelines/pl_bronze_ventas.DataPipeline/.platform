@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "pl_bronze_ventas"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "b4eb349a-a5f4-b8b7-4c79-67fc06dc86ae"
+  }
+}
