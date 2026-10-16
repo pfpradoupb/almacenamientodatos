@@ -1,0 +1,348 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "ExcelSource",
+            "storeSettings": {
+              "type": "LakehouseReadSettings",
+              "recursive": false,
+              "enablePartitionDiscovery": false
+            },
+            "datasetSettings": {
+              "type": "Excel",
+              "typeProperties": {
+                "location": {
+                  "type": "LakehouseLocation",
+                  "folderPath": "Excel",
+                  "fileName": "Ventas.xlsx"
+                },
+                "sheetName": "Ventas_Deportes",
+                "firstRowAsHeader": true
+              },
+              "schema": [],
+              "linkedService": {
+                "name": "Lakehouse_completo",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "0113c9d9-a552-b85b-48a6-8bd4a37dd33e",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Files"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "ParquetSink",
+            "formatSettings": {
+              "type": "ParquetWriteSettings",
+              "enableVertiParquet": true
+            },
+            "storeSettings": {
+              "type": "LakehouseWriteSettings"
+            },
+            "datasetSettings": {
+              "type": "Parquet",
+              "typeProperties": {
+                "location": {
+                  "type": "LakehouseLocation",
+                  "folderPath": "Parquet",
+                  "fileName": "Ventas.parquet"
+                },
+                "compressionCodec": "snappy"
+              },
+              "schema": [],
+              "linkedService": {
+                "name": "Lakehouse_completo",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "0113c9d9-a552-b85b-48a6-8bd4a37dd33e",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Files"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "IdVenta",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "IdVenta",
+                  "type": "String",
+                  "physicalType": "STRING"
+                }
+              },
+              {
+                "source": {
+                  "name": "FechaVenta",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "FechaVenta",
+                  "type": "String",
+                  "physicalType": "STRING"
+                }
+              },
+              {
+                "source": {
+                  "name": "IdCliente",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "IdCliente",
+                  "type": "String",
+                  "physicalType": "STRING"
+                }
+              },
+              {
+                "source": {
+                  "name": "Cliente",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "Cliente",
+                  "type": "String",
+                  "physicalType": "STRING"
+                }
+              },
+              {
+                "source": {
+                  "name": "Genero",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "Genero",
+                  "type": "String",
+                  "physicalType": "STRING"
+                }
+              },
+              {
+                "source": {
+                  "name": "IdCiudad",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "IdCiudad",
+                  "type": "String",
+                  "physicalType": "STRING"
+                }
+              },
+              {
+                "source": {
+                  "name": "Ciudad",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "Ciudad",
+                  "type": "String",
+                  "physicalType": "STRING"
+                }
+              },
+              {
+                "source": {
+                  "name": "EstadoFactura",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "EstadoFactura",
+                  "type": "String",
+                  "physicalType": "STRING"
+                }
+              },
+              {
+                "source": {
+                  "name": "CanalVenta",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "CanalVenta",
+                  "type": "String",
+                  "physicalType": "STRING"
+                }
+              },
+              {
+                "source": {
+                  "name": "IdProducto",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "IdProducto",
+                  "type": "String",
+                  "physicalType": "STRING"
+                }
+              },
+              {
+                "source": {
+                  "name": "Producto",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "Producto",
+                  "type": "String",
+                  "physicalType": "STRING"
+                }
+              },
+              {
+                "source": {
+                  "name": "Cantidad",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "Cantidad",
+                  "type": "String",
+                  "physicalType": "STRING"
+                }
+              },
+              {
+                "source": {
+                  "name": "PrecioUnitario",
+                  "type": "String",
+                  "physicalType": "String"
+                },
+                "sink": {
+                  "name": "PrecioUnitario",
+                  "type": "String",
+                  "physicalType": "STRING"
+                }
+              }
+            ],
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          },
+          "enableStaging": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Copy_Excel_a_Bronze",
+        "dependsOn": []
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "39ff5c43-f94d-84af-44a4-6d8ef941a7be",
+          "workspaceId": "00000000-0000-0000-0000-000000000000"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Silver_ventas_DDL",
+        "dependsOn": [
+          {
+            "activity": "Copy_Excel_a_Bronze",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "34c002f0-bea1-9b90-4400-729c1b1660bf",
+          "workspaceId": "00000000-0000-0000-0000-000000000000"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Silver_ventas",
+        "dependsOn": [
+          {
+            "activity": "Silver_ventas_DDL",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "ef1a6a13-de76-a5be-49ef-c95a4502311e",
+          "workspaceId": "00000000-0000-0000-0000-000000000000"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Gold_ventas_DDL",
+        "dependsOn": [
+          {
+            "activity": "Silver_ventas",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "3f729ada-c9a2-b2ad-485d-f57c9952f7a6",
+          "workspaceId": "00000000-0000-0000-0000-000000000000"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Gold_ventas",
+        "dependsOn": [
+          {
+            "activity": "Gold_ventas_DDL",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
