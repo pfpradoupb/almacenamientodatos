@@ -1,0 +1,89 @@
+table dim_fecha
+	lineageTag: 18f441c2-ccc2-4cdd-bb5d-7eabb20cdd48
+	sourceLineageTag: [Gold].[dim_fecha]
+
+	column FechaKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 1ed2e518-c445-479b-9ae2-f3ef42c89f56
+		sourceLineageTag: FechaKey
+		summarizeBy: none
+		sourceColumn: FechaKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fecha
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d15d783b-54cc-450b-8632-693da4e1e340
+		sourceLineageTag: Fecha
+		summarizeBy: none
+		sourceColumn: Fecha
+
+		annotation SummarizationSetBy = Automatic
+
+	column Anio
+		dataType: int64
+		formatString: 0
+		lineageTag: a8616d3a-c8b2-4392-9d48-53072f437aa0
+		sourceLineageTag: Anio
+		summarizeBy: none
+		sourceColumn: Anio
+
+		annotation SummarizationSetBy = Automatic
+
+	column Trimestre
+		dataType: int64
+		formatString: 0
+		lineageTag: f1e30d68-f835-48c6-a17f-8c31a01a36e5
+		sourceLineageTag: Trimestre
+		summarizeBy: none
+		sourceColumn: Trimestre
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mes
+		dataType: int64
+		formatString: 0
+		lineageTag: 24b469d1-a050-4c94-b619-55608c7ae64b
+		sourceLineageTag: Mes
+		summarizeBy: none
+		sourceColumn: Mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column NombreMes
+		dataType: string
+		lineageTag: a007ae86-1a95-4a15-b60a-cfe6c36498b6
+		sourceLineageTag: NombreMes
+		summarizeBy: none
+		sourceColumn: NombreMes
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dia
+		dataType: int64
+		formatString: 0
+		lineageTag: 3ea46978-c706-46a5-95b7-2b43e445a71a
+		sourceLineageTag: Dia
+		summarizeBy: none
+		sourceColumn: Dia
+
+		annotation SummarizationSetBy = Automatic
+
+	column DiaSemana
+		dataType: string
+		lineageTag: 663b59d6-e1f5-40b3-a53e-bab5b3dd55b3
+		sourceLineageTag: DiaSemana
+		summarizeBy: none
+		sourceColumn: DiaSemana
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_fecha = entity
+		mode: directLake
+		source
+			entityName: dim_fecha
+			schemaName: Gold
+			expressionSource: 'DirectLake - LS_UPB_GRUPO_5'
+

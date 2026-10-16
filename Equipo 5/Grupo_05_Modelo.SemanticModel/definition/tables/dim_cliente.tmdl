@@ -1,0 +1,48 @@
+table dim_cliente
+	lineageTag: c47839b1-eb6a-4f16-9d56-1551ca3f40dc
+	sourceLineageTag: [Gold].[dim_cliente]
+
+	column ClienteKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 542a9c53-11f5-447c-a6dc-383b0e4a9e6c
+		sourceLineageTag: ClienteKey
+		summarizeBy: none
+		sourceColumn: ClienteKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdCliente
+		dataType: string
+		lineageTag: 8a87a288-f56f-4afe-aad7-e54eab8263c3
+		sourceLineageTag: IdCliente
+		summarizeBy: none
+		sourceColumn: IdCliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cliente
+		dataType: string
+		lineageTag: a62dc257-e269-47c5-804e-585237e88644
+		sourceLineageTag: Cliente
+		summarizeBy: none
+		sourceColumn: Cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column Genero
+		dataType: string
+		lineageTag: 2417de35-056c-4f2d-9473-3149f2ba5378
+		sourceLineageTag: Genero
+		summarizeBy: none
+		sourceColumn: Genero
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_cliente = entity
+		mode: directLake
+		source
+			entityName: dim_cliente
+			schemaName: Gold
+			expressionSource: 'DirectLake - LS_UPB_GRUPO_5'
+

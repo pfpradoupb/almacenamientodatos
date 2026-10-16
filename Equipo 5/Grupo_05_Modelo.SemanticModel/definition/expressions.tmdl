@@ -1,0 +1,11 @@
+expression 'DirectLake - LS_UPB_GRUPO_5' =
+		let
+		    Source = AzureStorage.DataLake("https://onelake.dfs.fabric.microsoft.com/7cf07885-5568-45be-9013-44bd9fb2af6e/a51ca50c-7c84-4d0d-976c-6fdc12c5484d", [HierarchicalNavigation=true])
+		in
+		    Source
+	lineageTag: cb07960d-bb3c-4015-8e5c-c461c57604e0
+
+	annotation PBI_IncludeFutureArtifacts = False
+
+	annotation PBI_RemovedChildren = [{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"[Silver].[ventas]"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"[Silver].[ventas_rechazadas]"}},"objectType":"Table"}]
+

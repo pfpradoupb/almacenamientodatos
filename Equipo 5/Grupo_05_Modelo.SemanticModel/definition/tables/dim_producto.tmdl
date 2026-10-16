@@ -1,0 +1,39 @@
+table dim_producto
+	lineageTag: 20ee2acc-aad1-44e1-b10b-78baf19af3e6
+	sourceLineageTag: [Gold].[dim_producto]
+
+	column ProductoKey
+		dataType: int64
+		formatString: 0
+		lineageTag: fc7c513d-4658-4e87-b9d6-9b18fe53d630
+		sourceLineageTag: ProductoKey
+		summarizeBy: none
+		sourceColumn: ProductoKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdProducto
+		dataType: string
+		lineageTag: 69c01fec-726f-43f6-a4e5-47bb205b250f
+		sourceLineageTag: IdProducto
+		summarizeBy: none
+		sourceColumn: IdProducto
+
+		annotation SummarizationSetBy = Automatic
+
+	column Producto
+		dataType: string
+		lineageTag: deeb1a47-b434-4293-bb51-87cae789c770
+		sourceLineageTag: Producto
+		summarizeBy: none
+		sourceColumn: Producto
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_producto = entity
+		mode: directLake
+		source
+			entityName: dim_producto
+			schemaName: Gold
+			expressionSource: 'DirectLake - LS_UPB_GRUPO_5'
+

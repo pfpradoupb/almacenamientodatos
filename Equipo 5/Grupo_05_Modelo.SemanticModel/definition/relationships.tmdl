@@ -1,0 +1,24 @@
+relationship 1bed511d-eaef-dbc7-367b-e930413b83a3
+	fromColumn: fact_ventas.CanalKey
+	toColumn: dim_canal.CanalKey
+
+relationship d17d0d5f-47f7-1ee2-c761-d910d9bbd4eb
+	fromColumn: fact_ventas.CiudadKey
+	toColumn: dim_ciudad.CiudadKey
+
+relationship 2b68b4de-351c-c6fc-6ff4-adee92ff051e
+	fromColumn: fact_ventas.ClienteKey
+	toColumn: dim_cliente.ClienteKey
+
+relationship 77b5c798-27b8-07ba-28ea-e374c98f0080
+	fromColumn: fact_ventas.EstadoKey
+	toColumn: dim_estado_factura.EstadoKey
+
+relationship e213e446-16d0-9f4a-7c87-95d44946c471
+	fromColumn: fact_ventas.FechaKey
+	toColumn: dim_fecha.FechaKey
+
+relationship da0deab4-6a53-7b2c-6a3a-da71d519ab3b
+	fromColumn: fact_ventas.ProductoKey
+	toColumn: dim_producto.ProductoKey
+

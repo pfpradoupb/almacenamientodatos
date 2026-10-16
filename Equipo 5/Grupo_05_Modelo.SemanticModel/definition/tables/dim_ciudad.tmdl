@@ -1,0 +1,39 @@
+table dim_ciudad
+	lineageTag: bc0146d9-ba7a-4fe3-b831-fb68b45b04c7
+	sourceLineageTag: [Gold].[dim_ciudad]
+
+	column CiudadKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 67edfb43-8c5a-4638-a728-20dcb7b23749
+		sourceLineageTag: CiudadKey
+		summarizeBy: none
+		sourceColumn: CiudadKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdCiudad
+		dataType: string
+		lineageTag: 90f394ae-fb09-42b1-9b72-f646154dbfc8
+		sourceLineageTag: IdCiudad
+		summarizeBy: none
+		sourceColumn: IdCiudad
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ciudad
+		dataType: string
+		lineageTag: ef9cd844-1848-4a4e-9641-a2f069800c9f
+		sourceLineageTag: Ciudad
+		summarizeBy: none
+		sourceColumn: Ciudad
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_ciudad = entity
+		mode: directLake
+		source
+			entityName: dim_ciudad
+			schemaName: Gold
+			expressionSource: 'DirectLake - LS_UPB_GRUPO_5'
+
