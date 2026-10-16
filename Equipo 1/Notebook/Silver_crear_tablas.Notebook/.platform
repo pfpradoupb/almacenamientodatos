@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "Silver_crear_tablas"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "6a0a239c-c5cc-94b9-4222-d75ac68ceea7"
+  }
+}
