@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "Gold_ventas"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "2a10cfb5-6576-bc53-47e4-93dd5f81acd7"
+  }
+}
