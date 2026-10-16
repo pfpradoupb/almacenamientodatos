@@ -1,0 +1,24 @@
+relationship 7cd8a2d9-1490-d3e6-7b6c-6f678afb3025
+	fromColumn: factventas.IdCanal
+	toColumn: dimcanalventa.IdCanal
+
+relationship 413451df-c6d9-a54a-aef4-e73c12faeb32
+	fromColumn: factventas.IdCiudad
+	toColumn: dimciudad.IdCiudad
+
+relationship e90ff9da-73bb-b58a-96aa-165243e112a2
+	fromColumn: factventas.IdCliente
+	toColumn: dimcliente.IdCliente
+
+relationship f6d6765f-e971-c41f-6528-6d00db77b524
+	fromColumn: factventas.IdProducto
+	toColumn: dimproducto.IdProducto
+
+relationship 59f56c57-a4b4-16e4-ce67-a80bf0a0c2dd
+	fromColumn: factventas.IdFecha
+	toColumn: dimfecha.IdFecha
+
+relationship 54eea60c-d201-c6da-2176-ad6fe0f99d55
+	fromColumn: factventas.IdEstadoFactura
+	toColumn: dimestadofactura.IdEstadoFactura
+

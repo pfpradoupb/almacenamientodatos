@@ -1,0 +1,127 @@
+table factventas
+	lineageTag: 86383389-a3ae-491e-9d90-2e9aad3fa550
+	sourceLineageTag: [Gold].[factventas]
+
+	column IdDetalleVenta
+		dataType: int64
+		formatString: 0
+		lineageTag: b750e275-4f8c-4733-a859-45553ae2067e
+		sourceLineageTag: IdDetalleVenta
+		summarizeBy: sum
+		sourceColumn: IdDetalleVenta
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdVenta
+		dataType: string
+		lineageTag: b4c181ce-0a11-474f-a03f-7ff56092f0c8
+		sourceLineageTag: IdVenta
+		summarizeBy: none
+		sourceColumn: IdVenta
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdFecha
+		dataType: int64
+		formatString: 0
+		lineageTag: eae75c48-954a-4f4d-aa4c-49539dcc1844
+		sourceLineageTag: IdFecha
+		summarizeBy: none
+		sourceColumn: IdFecha
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdCliente
+		dataType: string
+		lineageTag: bec9e795-dd58-4353-9fbd-71740067a98f
+		sourceLineageTag: IdCliente
+		summarizeBy: none
+		sourceColumn: IdCliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdProducto
+		dataType: string
+		lineageTag: 05577f3f-153e-437e-a7f8-d99d145f18a6
+		sourceLineageTag: IdProducto
+		summarizeBy: none
+		sourceColumn: IdProducto
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdCiudad
+		dataType: string
+		lineageTag: 02ba3bb4-1542-4f9b-8f29-3dcf1b64ed0c
+		sourceLineageTag: IdCiudad
+		summarizeBy: none
+		sourceColumn: IdCiudad
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdCanal
+		dataType: int64
+		formatString: 0
+		lineageTag: 26c1b9d0-ea1b-4ce9-a742-2d94dc2ae438
+		sourceLineageTag: IdCanal
+		summarizeBy: none
+		sourceColumn: IdCanal
+
+		annotation SummarizationSetBy = Automatic
+
+	column IdEstadoFactura
+		dataType: string
+		lineageTag: 4b861987-97a7-41c2-b04a-1f6e004394d8
+		sourceLineageTag: IdEstadoFactura
+		summarizeBy: none
+		sourceColumn: IdEstadoFactura
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cantidad
+		dataType: int64
+		formatString: 0
+		lineageTag: 3a82cd8f-2a2a-4f50-840b-8c6f495a1652
+		sourceLineageTag: Cantidad
+		summarizeBy: sum
+		sourceColumn: Cantidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column PrecioUnitario
+		dataType: double
+		lineageTag: ccc06968-e031-4019-90d3-8ecc3b4a01d8
+		sourceLineageTag: PrecioUnitario
+		summarizeBy: sum
+		sourceColumn: PrecioUnitario
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ValorVenta
+		dataType: double
+		lineageTag: 10acab69-593e-4100-b596-020d1e0de482
+		sourceLineageTag: ValorVenta
+		summarizeBy: sum
+		sourceColumn: ValorVenta
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CalidadRegistro
+		dataType: string
+		lineageTag: 41bb7909-9c3f-4a5f-ad5a-6446be922c13
+		sourceLineageTag: CalidadRegistro
+		summarizeBy: none
+		sourceColumn: CalidadRegistro
+
+		annotation SummarizationSetBy = Automatic
+
+	partition factventas = entity
+		mode: directLake
+		source
+			entityName: factventas
+			schemaName: Gold
+			expressionSource: 'DirectLake - LS_Bronze_Silver'
+

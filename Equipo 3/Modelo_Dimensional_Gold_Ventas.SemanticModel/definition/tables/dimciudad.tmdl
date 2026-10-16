@@ -1,0 +1,29 @@
+table dimciudad
+	lineageTag: 2da05a86-7dd7-426f-9fea-9c26d25e93fb
+	sourceLineageTag: [Gold].[dimciudad]
+
+	column IdCiudad
+		dataType: string
+		lineageTag: f8c8e989-4e38-42d2-8397-89e891cfb25f
+		sourceLineageTag: IdCiudad
+		summarizeBy: none
+		sourceColumn: IdCiudad
+
+		annotation SummarizationSetBy = Automatic
+
+	column NombreCiudad
+		dataType: string
+		lineageTag: 65eac213-17a5-4563-945f-a4ab4d0fcb26
+		sourceLineageTag: NombreCiudad
+		summarizeBy: none
+		sourceColumn: NombreCiudad
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dimciudad = entity
+		mode: directLake
+		source
+			entityName: dimciudad
+			schemaName: Gold
+			expressionSource: 'DirectLake - LS_Bronze_Silver'
+

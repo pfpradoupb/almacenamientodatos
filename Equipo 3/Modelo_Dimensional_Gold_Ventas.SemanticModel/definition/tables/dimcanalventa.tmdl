@@ -1,0 +1,30 @@
+table dimcanalventa
+	lineageTag: 7e10f2e3-8417-439f-b016-72729362b86e
+	sourceLineageTag: [Gold].[dimcanalventa]
+
+	column IdCanal
+		dataType: int64
+		formatString: 0
+		lineageTag: bcfdd2c1-bc10-485e-8c8f-7339d9e7503a
+		sourceLineageTag: IdCanal
+		summarizeBy: none
+		sourceColumn: IdCanal
+
+		annotation SummarizationSetBy = Automatic
+
+	column NombreCanal
+		dataType: string
+		lineageTag: 8d81ba39-2d5f-4e45-9e5e-540f614fafd2
+		sourceLineageTag: NombreCanal
+		summarizeBy: none
+		sourceColumn: NombreCanal
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dimcanalventa = entity
+		mode: directLake
+		source
+			entityName: dimcanalventa
+			schemaName: Gold
+			expressionSource: 'DirectLake - LS_Bronze_Silver'
+

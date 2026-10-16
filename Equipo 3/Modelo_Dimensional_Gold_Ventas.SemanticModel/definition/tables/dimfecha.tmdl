@@ -1,0 +1,80 @@
+table dimfecha
+	lineageTag: f95d57ac-ddad-4f26-a3a8-d1cc15d97629
+	sourceLineageTag: [Gold].[dimfecha]
+
+	column IdFecha
+		dataType: int64
+		formatString: 0
+		lineageTag: b9cf72b3-8cd8-465c-aa35-20316035cd25
+		sourceLineageTag: IdFecha
+		summarizeBy: none
+		sourceColumn: IdFecha
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaVenta
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ebf6015a-8ecd-409a-9c9e-70f577f49fc2
+		sourceLineageTag: FechaVenta
+		summarizeBy: none
+		sourceColumn: FechaVenta
+
+		annotation SummarizationSetBy = Automatic
+
+	column Año
+		dataType: int64
+		formatString: 0
+		lineageTag: 831a5909-e873-42d2-a19e-9a2a22742953
+		sourceLineageTag: Año
+		summarizeBy: none
+		sourceColumn: Año
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mes
+		dataType: int64
+		formatString: 0
+		lineageTag: 545905c3-744e-4690-8451-fe0a323c878c
+		sourceLineageTag: Mes
+		summarizeBy: none
+		sourceColumn: Mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dia
+		dataType: int64
+		formatString: 0
+		lineageTag: d52095a5-06b0-4501-b901-dc16fb8bd5b7
+		sourceLineageTag: Dia
+		summarizeBy: none
+		sourceColumn: Dia
+
+		annotation SummarizationSetBy = Automatic
+
+	column Trimestre
+		dataType: int64
+		formatString: 0
+		lineageTag: f7b70060-9273-4f8a-ad3f-4627b113b9dc
+		sourceLineageTag: Trimestre
+		summarizeBy: none
+		sourceColumn: Trimestre
+
+		annotation SummarizationSetBy = Automatic
+
+	column NombreMes
+		dataType: string
+		lineageTag: c96e69c6-6c81-4646-9444-f8c627158c83
+		sourceLineageTag: NombreMes
+		summarizeBy: none
+		sourceColumn: NombreMes
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dimfecha = entity
+		mode: directLake
+		source
+			entityName: dimfecha
+			schemaName: Gold
+			expressionSource: 'DirectLake - LS_Bronze_Silver'
+
