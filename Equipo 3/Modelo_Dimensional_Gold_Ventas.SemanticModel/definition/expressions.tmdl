@@ -1,0 +1,11 @@
+expression 'DirectLake - LS_Bronze_Silver' =
+		let
+		    Source = AzureStorage.DataLake("https://onelake.dfs.fabric.microsoft.com/2fda67b6-b1ee-4cd2-952c-be05ec8df05f/6ab51063-fb51-4300-881d-8af622a3c12a", [HierarchicalNavigation=true])
+		in
+		    Source
+	lineageTag: be96f0e9-8030-47b3-bf8d-4722b1d33b43
+
+	annotation PBI_IncludeFutureArtifacts = False
+
+	annotation PBI_RemovedChildren = [{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"[Silver].[ventas]"}},"objectType":"Table"}]
+

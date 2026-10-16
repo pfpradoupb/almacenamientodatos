@@ -1,0 +1,29 @@
+table dimproducto
+	lineageTag: 87324f96-634c-4b3a-a580-a689b462f947
+	sourceLineageTag: [Gold].[dimproducto]
+
+	column IdProducto
+		dataType: string
+		lineageTag: 64c3c914-6872-46ae-b6d4-a5afcdac3c5a
+		sourceLineageTag: IdProducto
+		summarizeBy: none
+		sourceColumn: IdProducto
+
+		annotation SummarizationSetBy = Automatic
+
+	column NombreProducto
+		dataType: string
+		lineageTag: 204bdb34-8c0e-4b5a-90be-c02b0e078b68
+		sourceLineageTag: NombreProducto
+		summarizeBy: none
+		sourceColumn: NombreProducto
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dimproducto = entity
+		mode: directLake
+		source
+			entityName: dimproducto
+			schemaName: Gold
+			expressionSource: 'DirectLake - LS_Bronze_Silver'
+

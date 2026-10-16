@@ -1,0 +1,29 @@
+table dimestadofactura
+	lineageTag: 094c53f2-3dd2-4499-925b-43b17df38075
+	sourceLineageTag: [Gold].[dimestadofactura]
+
+	column IdEstadoFactura
+		dataType: string
+		lineageTag: 4be640de-7949-4236-911d-a9f9490bdb50
+		sourceLineageTag: IdEstadoFactura
+		summarizeBy: none
+		sourceColumn: IdEstadoFactura
+
+		annotation SummarizationSetBy = Automatic
+
+	column NombreEstadoFactura
+		dataType: string
+		lineageTag: 7826bd52-cb2a-415d-8f62-124dfec1c8c4
+		sourceLineageTag: NombreEstadoFactura
+		summarizeBy: none
+		sourceColumn: NombreEstadoFactura
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dimestadofactura = entity
+		mode: directLake
+		source
+			entityName: dimestadofactura
+			schemaName: Gold
+			expressionSource: 'DirectLake - LS_Bronze_Silver'
+

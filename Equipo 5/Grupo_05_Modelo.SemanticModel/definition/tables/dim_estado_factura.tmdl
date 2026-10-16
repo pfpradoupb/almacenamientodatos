@@ -1,0 +1,30 @@
+table dim_estado_factura
+	lineageTag: ed23ef36-1218-4756-9dc5-b8c3b149e4ed
+	sourceLineageTag: [Gold].[dim_estado_factura]
+
+	column EstadoKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 4625bd18-0b1f-467d-abbd-29fdca60cf66
+		sourceLineageTag: EstadoKey
+		summarizeBy: none
+		sourceColumn: EstadoKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column EstadoFactura
+		dataType: string
+		lineageTag: f5fa9b11-3f98-4703-8f97-a9dd432e6a22
+		sourceLineageTag: EstadoFactura
+		summarizeBy: none
+		sourceColumn: EstadoFactura
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_estado_factura = entity
+		mode: directLake
+		source
+			entityName: dim_estado_factura
+			schemaName: Gold
+			expressionSource: 'DirectLake - LS_UPB_GRUPO_5'
+
